@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<title>why are your eyes here</title>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+	  var link = document.createElement( 'link' );
+	  link.rel = 'stylesheet';
+	  link.type = 'text/css';
+	  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	  document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+  </head>
+
+  <body>
+	<div class="reveal">
+	  <div class="slides">
+        <section>
+          <h1>100 Tips For Writing Code</h1>
+          <h2>(everything I wish I had known)</h2>
+        </section>
+        <section>
+          <h2>Fake it 'til you make it</h2>
+        </section>
+        <section>
+          <h2>Time</h2>
+          <p>I started programming in 2001, and I felt confident about programming in ____</p>
+        </section>
+        <section>
+          <h2>Shake children until they start programming</h2>
+        </section>
+        <section>
+          <h2>Have heroes</h2>
+          <p>why the lucky stiff</p>
+          <p><img src="http://cdn.verboselogging.com/transloadit/original/08/2630465d57fd3901ff2e4b48f23b42/why-the-lucky-stiff.jpg"></p>
+        </section>
+        <section>
+          <h2>Blog about everything</h2>
+          <p><img src="http://i.imgur.com/J4Y5kfa.jpg"></p>
+        </section>
+        <section>
+          <h2>Write in your own voice</h2>
+          <p><a href="http://mislav.uniqpath.com/poignant-guide/book/chapter-1.html">chapter 1 of 'the (poignant) guide to ruby'</a></p>
+        </section>
+        <section>
+          <h2>Write programs in your own voice</h2>
+          <p>metaprogram, macros, typeclasses, custom operators</p>
+        </section>
+        <section>
+          <h2>give programming to children</h2>
+          <p>https://github.com/shoes/shoes</p>
+        </section>
+        <section>
+          <h2>beauty in golf</h2>
+          <p>4 KB web framework (rails: ~50 MB)</p>
+          <p>https://github.com/camping/camping</p>
+        </section>
+        <section>
+          <h2>sometimes programming can just be for whimsy</h2>
+          <p>[in /etc/hosts] <code>555.55.55.555	hoodwink.d</code></p>
+          <p><img width="400px" src="http://farm4.static.flickr.com/3437/3838274563_07ee2d960d.jpg"></p>
+        </section>
+        <section>
+          <h2>build online communities</h2>
+          <p><img width="400px"  src="http://farm4.static.flickr.com/3437/3838274563_07ee2d960d.jpg"></p>
+        </section>
+        <section>
+          <h2>line wrap to 50</h2>
+          <pre style="font-size: 12pt" class="c">
+  ~ potion ~
+
+  Potion is an object- and mixin-oriented (traits)
+  language.
+
+ Its exciting points are:
+
+   * Just-in-time compilation to x86 and x86-64
+     machine code function pointers. This means
+     she's a speedy one. Who integrates very
+     well with C extensions.
+
+     The JIT is turned on by default and is
+     considered the primary mode of operation.
+
+   * Intermediate bytecode format and VM. Load
+     and dump code. Decent speed and cross-
+     architecture. Heavily based on Lua's VM.
+
+   * A lightweight generational GC, based on
+     Basile Starynkevitch's work on Qish, with
+     ~4ms per GC on average with < 100MB heaps.
+     <http://starynkevitch.net/Basile/qishintro.html>
+
+   * Bootstrapped "id" object model, based on
+     Ian Piumarta's soda languages. This means
+     everything in the language, including
+     object allocation and interpreter state
+     are part of the object model.
+     (See COPYING for citations.)
+          </pre>
+        </section>
+        <section>
+          <h2>liberally use ascii art</h2>
+          <pre>
+           .ooo
+            'OOOo
+        ~ p ooOOOo tion ~
+            .OOO
+             oO      %% a little
+               Oo    fast language.
+              'O
+               `
+              (o)
+          ___/ /          
+         /`    \ 
+        /v^  `  ,
+       (...v/v^/
+        \../::/
+         \/::/ 
+          </pre>
+        </section>
+        <section>
+          <h2>do the impossible</h2>
+          <p>unHoly: https://github.com/whymirror/unholy</p>
+          <pre class="ascii"><code>
+  To compile Ruby to a .pyc:
+
+  > bin/unholy test.rb
+  > PYTHONPATH=python \
+               python test.rb.pyc
+  
+            ---
+
+  To translate to Python:
+
+  > decompyle test.rb.pyc > test.py
+          </code></pre>
+        </section>
+        <section>
+          <h2>Who came here before I?</h2>
+        </section>
+        <section>
+          <h2>and why did they leave?</h2>
+        </section>
+        <section>
+          <h2>read words</h2>
+          <p>http://chneukirchen.org/trivium/</p>
+          <p>http://kottke.org/</p>
+          <p>http://research.microsoft.com/en-us/people/simonpj/</p>
+          <p>an RSS feed is your best friend</p>
+        </section>
+        <section>
+          <h2>read c</h2>
+          <pre lang="c"><code>
+long do_sys_open(int dfd, const char __user *filename, int flags, umode_t mode)
+{
+	struct open_flags op;
+	int fd = build_open_flags(flags, mode, &op);
+	struct filename *tmp;
+
+	if (fd)
+		return fd;
+
+	tmp = getname(filename);
+	if (IS_ERR(tmp))
+		return PTR_ERR(tmp);
+
+	fd = get_unused_fd_flags(flags);
+	if (fd >= 0) {
+		struct file *f = do_filp_open(dfd, tmp, &op);
+		if (IS_ERR(f)) {
+			put_unused_fd(fd);
+			fd = PTR_ERR(f);
+		} else {
+			fsnotify_open(f);
+			fd_install(fd, f);
+		}
+	}
+	putname(tmp);
+	return fd;
+}
+          </code></pre>
+          <p><a href="https://github.com/torvalds/linux/blob/master/fs/open.c">fs/open.c</a></p>
+        </section>
+        <section>
+          <h2>read haskell</h2>
+          <pre lang="haskell"><code>
+p_jvalue         :: CharParser () JSValue
+p_jvalue          =  (JSNull      <$  p_null)
+                 <|> (JSBool      <$> p_boolean)
+                 <|> (JSArray     <$> p_array)
+                 <|> (JSString    <$> p_js_string)
+                 <|> (JSObject    <$> p_js_object)
+                 <|> (JSRational False <$> p_number)
+                 <?> "JSON value"
+
+p_null           :: CharParser () ()
+p_null            = tok (string "null") >> return ()
+
+p_boolean        :: CharParser () Bool
+p_boolean         = tok
+                      (  (True  <$ string "true")
+                     <|> (False <$ string "false")
+                      )
+
+p_array          :: CharParser () [JSValue]
+p_array           = between (tok (char '[')) (tok (char ']'))
+                  $ p_jvalue `sepBy` tok (char ',')
+
+p_string         :: CharParser () String
+p_string          = between (tok (char '&quot;')) (char '&quot;') (many p_char)
+  where p_char    =  (char '\\' >> p_esc)
+                 <|> (satisfy (\x -> x /= '&quot;' && x /= '\\'))
+
+        p_esc     =  ('&quot;'   <$ char '&quot;')
+                 <|> ('\\'  <$ char '\\')
+                 <|> ('/'   <$ char '/')
+                 <|> ('\b'  <$ char 'b')
+                 <|> ('\f'  <$ char 'f')
+                 <|> ('\n'  <$ char 'n')
+                 <|> ('\r'  <$ char 'r')
+                 <|> ('\t'  <$ char 't')
+                 <|> (char 'u' *> p_uni)
+                 <?> &quot;escape character&quot;
+
+        p_uni     = check =<< count 4 (satisfy isHexDigit)
+          where check x | code <= max_char  = pure (toEnum code)
+                        | otherwise         = empty
+                  where code      = fst $ head $ readHex x
+                        max_char  = fromEnum (maxBound :: Char)
+
+p_object         :: CharParser () [(String,JSValue)]
+p_object          = between (tok (char '{')) (tok (char '}'))
+                  $ p_field `sepBy` tok (char ',')
+  where p_field   = (,) <$> (p_string <* tok (char ':')) <*> p_jvalue
+
+p_number         :: CharParser () Rational
+p_number          = do s <- getInput
+                       case readSigned readFloat s of
+                         [(n,s1)] -> n <$ setInput s1
+                         _        -> empty
+
+p_js_string      :: CharParser () JSString
+p_js_string       = toJSString <$> p_string
+
+p_js_object      :: CharParser () (JSObject JSValue)
+p_js_object       = toJSObject <$> p_object
+          </code></pre>
+        </section>
+        <section>
+          <h2>read piet</h2>
+          <p><img src="http://www.dangermouse.net/esoteric/piet/fib.gif" style="border: 0"></p>
+          <p>(prints first 100 Fibonacci numbers)</p>
+        </section>
+        <section>
+          <h2>read piet</h2>
+          <p><img src="http://www.dangermouse.net/esoteric/piet/fibbig1.gif" width="450px"></p>
+          <p>(prints first 100 Fibonacci numbers)</p>
+        </section>
+        <section>
+          <h2>read 'harry potter'</h2>
+          <p>the gripping tale of how a young dentists' daughter saves the lives of her stupid friends over and over again</p>
+        </section>
+        <section>
+          <h2>read 'harry potter'</h2>
+          <p>"Kreacher is what he has been made by wizards, Harry."</p>
+          <p>(quote of the century)</p>
+        </section>
+        <section>
+          <h2>read</h2>
+        </section>
+        <section>
+          <h2>write</h2>
+          <p>ours is a literate profession</p>
+        </section>
+        <section>
+          <h2>why not use files instead of databases</h2>
+          <p>one folder per record</p>
+          <p>one file per column</p>
+          <p>SELECT = <code>grep(1)</code></p>
+          <p>INSERT = <code>mkdir(1)</code></p>
+          <p>DELETE = <code>rm(1)</code></p>
+          <p>schema migrations = <code>mv(1)</code></p>
+        </section>
+        <section>
+          <h2>why not implement the internet with pigeons?</h2>
+          <p><img src="http://i.imgur.com/lIRpSeW.png"></p>
+        </section>
+        <section>
+          <h2>why not implement the internet with pigeons?</h2>
+          <blockquote><p>IPoAC has been successfully implemented, but for only nine packets of data, with a packet loss ratio of 55% (due to user error),[2] and a response time ranging from 3000 seconds (~54 minutes) to over 6000 seconds (~1.77 hours). </p></blockquote>
+        </section>
+        <section>
+          <h2>why not delete everything?</h2>
+          <blockquote style="font-size: 22pt"><p>UDP was actually “designed” in 30 minutes on
+          a blackboard when we decided pull the original TCP protocol
+          apart into TCP and IP, and created UDP on top of IP as an
+          alternative for multiplexing and demultiplexing IP datagrams
+          inside a host among the various host processes or tasks. But
+          it was a placeholder that enabled all the
+          non-virtual-circuit protocols since ... without [people's] having to
+          negotiate for permission either to define a new protocol or
+          to extend TCP by adding “features”.</p></blockquote>
+          <p>David P. Reed: TCP, UDP, end-to-end principle, Reed's law</p>
+        </section>
+        <section>
+          <h2>why not?</h2>
+        </section>
+        <section>
+          <h2>A modest proposal for naming functions</h2>
+          <p>nameOfName, not verbName</p>
+        </section>
+        <section>
+          <h2>A modest proposal for naming functions</h2>
+          <pre class="js"><code>
+function getStringById(id) {
+  ...
+}
+          </code></pre>
+          <pre class="js"><code>
+function stringOfId(id) {
+  ...
+}
+          </code></pre>
+        </section>
+        <section>
+          <h2>A modest proposal for naming functions</h2>
+          <pre class="js"><code>
+function updateString() {
+  /* grab global key */
+  /* look up key in database */
+  /* insert new string into database with key */
+  /* increment counter */
+  /* send email to mom */
+  /* delete all MP3s on disk */
+  /* return */
+}
+          </code></pre>
+        </section>
+        <section>
+          <h2>A modest proposal for naming functions</h2>
+          <p>What if there is no good <code>foo</code> for <code>fooOfString</code>?</p>
+          <img src="http://www.eaudrey.com/myth/images/Centaur.gif"></p>
+        </section>
+        <section>
+          <h2>Long comments</h2>
+          <pre class="c" style="font-size: 12pt"><code>
+while([fh offsetInFile]+12<=imageoffs)
+{
+    uint32_t sign=[fh readUInt32BE];
+    uint32_t marker=[fh readUInt32BE];
+    uint32_t chunklen=[fh readUInt32BE];
+    off_t nextchunk=[fh offsetInFile]+((chunklen+3)&~3);
+    // At this point, I'd like to take a moment to speak to you about the Adobe PSD format.
+    // PSD is not a good format. PSD is not even a bad format. Calling it such would be an
+    // insult to other bad formats, such as PCX or JPEG. No, PSD is an abysmal format. Having
+    // worked on this code for several weeks now, my hate for PSD has grown to a raging fire
+    // that burns with the fierce passion of a million suns.
+    // If there are two different ways of doing something, PSD will do both, in different
+    // places. It will then make up three more ways no sane human would think of, and do those
+    // too. PSD makes inconsistency an art form. Why, for instance, did it suddenly decide
+    // that *these* particular chunks should be aligned to four bytes, and that this alignement
+    // should *not* be included in the size? Other chunks in other places are either unaligned,
+    // or aligned with the alignment included in the size. Here, though, it is not included.
+    // Either one of these three behaviours would be fine. A sane format would pick one. PSD,
+    // of course, uses all three, and more.
+    // Trying to get data out of a PSD file is like trying to find something in the attic of
+    // your eccentric old uncle who died in a freak freshwater shark attack on his 58th
+    // birthday. That last detail may not be important for the purposes of the simile, but
+    // at this point I am spending a lot of time imagining amusing fates for the people
+    // responsible for this Rube Goldberg of a file format.
+    // Earlier, I tried to get a hold of the latest specs for the PSD file format. To do this,
+    // I had to apply to them for permission to apply to them to have them consider sending
+    // me this sacred tome. This would have involved faxing them a copy of some document or
+    // other, probably signed in blood. I can only imagine that they make this process so
+    // difficult because they are intensely ashamed of having created this abomination. I
+    // was naturally not gullible enough to go through with this procedure, but if I had done
+    // so, I would have printed out every single page of the spec, and set them all on fire.
+    // Were it within my power, I would gather every single copy of those specs, and launch
+    // them on a spaceship directly into the sun.
+    //
+    // PSD is not my favourite file format.
+
+    if(sign!='8BIM') break; // sanity check
+                             </code></pre>
+          <p><a href="https://code.google.com/p/xee/source/browse/XeePhotoshopLoader.m?r=f16763d221dfca6253983824b470adf553a19e06#108">XeePhotoshopLoader.m</a></p>
+        </section>
+        <section>
+          <h2>Funny comments</h2>
+          <pre class="c" style="font-size: 12pt"><code>
+while([fh offsetInFile]+12<=imageoffs)
+{
+    uint32_t sign=[fh readUInt32BE];
+    uint32_t marker=[fh readUInt32BE];
+    uint32_t chunklen=[fh readUInt32BE];
+    off_t nextchunk=[fh offsetInFile]+((chunklen+3)&~3);
+    // At this point, I'd like to take a moment to speak to you about the Adobe PSD format.
+    // PSD is not a good format. PSD is not even a bad format. Calling it such would be an
+    // insult to other bad formats, such as PCX or JPEG. No, PSD is an abysmal format. Having
+    // worked on this code for several weeks now, my hate for PSD has grown to a raging fire
+    // that burns with the fierce passion of a million suns.
+    // If there are two different ways of doing something, PSD will do both, in different
+    // places. It will then make up three more ways no sane human would think of, and do those
+    // too. PSD makes inconsistency an art form. Why, for instance, did it suddenly decide
+    // that *these* particular chunks should be aligned to four bytes, and that this alignement
+    // should *not* be included in the size? Other chunks in other places are either unaligned,
+    // or aligned with the alignment included in the size. Here, though, it is not included.
+    // Either one of these three behaviours would be fine. A sane format would pick one. PSD,
+    // of course, uses all three, and more.
+    // Trying to get data out of a PSD file is like trying to find something in the attic of
+    // your eccentric old uncle who died in a freak freshwater shark attack on his 58th
+    // birthday. That last detail may not be important for the purposes of the simile, but
+    // at this point I am spending a lot of time imagining amusing fates for the people
+    // responsible for this Rube Goldberg of a file format.
+    // Earlier, I tried to get a hold of the latest specs for the PSD file format. To do this,
+    // I had to apply to them for permission to apply to them to have them consider sending
+    // me this sacred tome. This would have involved faxing them a copy of some document or
+    // other, probably signed in blood. I can only imagine that they make this process so
+    // difficult because they are intensely ashamed of having created this abomination. I
+    // was naturally not gullible enough to go through with this procedure, but if I had done
+    // so, I would have printed out every single page of the spec, and set them all on fire.
+    // Were it within my power, I would gather every single copy of those specs, and launch
+    // them on a spaceship directly into the sun.
+    //
+    // PSD is not my favourite file format.
+
+    if(sign!='8BIM') break; // sanity check
+                             </code></pre>
+          <p><a href="https://code.google.com/p/xee/source/browse/XeePhotoshopLoader.m?r=f16763d221dfca6253983824b470adf553a19e06#108">XeePhotoshopLoader.m</a></p>
+        </section>
+        <section>
+          <h2>Angry comments</h2>
+          <pre class="c" style="font-size: 12pt"><code>
+while([fh offsetInFile]+12<=imageoffs)
+{
+    uint32_t sign=[fh readUInt32BE];
+    uint32_t marker=[fh readUInt32BE];
+    uint32_t chunklen=[fh readUInt32BE];
+    off_t nextchunk=[fh offsetInFile]+((chunklen+3)&~3);
+    // At this point, I'd like to take a moment to speak to you about the Adobe PSD format.
+    // PSD is not a good format. PSD is not even a bad format. Calling it such would be an
+    // insult to other bad formats, such as PCX or JPEG. No, PSD is an abysmal format. Having
+    // worked on this code for several weeks now, my hate for PSD has grown to a raging fire
+    // that burns with the fierce passion of a million suns.
+    // If there are two different ways of doing something, PSD will do both, in different
+    // places. It will then make up three more ways no sane human would think of, and do those
+    // too. PSD makes inconsistency an art form. Why, for instance, did it suddenly decide
+    // that *these* particular chunks should be aligned to four bytes, and that this alignement
+    // should *not* be included in the size? Other chunks in other places are either unaligned,
+    // or aligned with the alignment included in the size. Here, though, it is not included.
+    // Either one of these three behaviours would be fine. A sane format would pick one. PSD,
+    // of course, uses all three, and more.
+    // Trying to get data out of a PSD file is like trying to find something in the attic of
+    // your eccentric old uncle who died in a freak freshwater shark attack on his 58th
+    // birthday. That last detail may not be important for the purposes of the simile, but
+    // at this point I am spending a lot of time imagining amusing fates for the people
+    // responsible for this Rube Goldberg of a file format.
+    // Earlier, I tried to get a hold of the latest specs for the PSD file format. To do this,
+    // I had to apply to them for permission to apply to them to have them consider sending
+    // me this sacred tome. This would have involved faxing them a copy of some document or
+    // other, probably signed in blood. I can only imagine that they make this process so
+    // difficult because they are intensely ashamed of having created this abomination. I
+    // was naturally not gullible enough to go through with this procedure, but if I had done
+    // so, I would have printed out every single page of the spec, and set them all on fire.
+    // Were it within my power, I would gather every single copy of those specs, and launch
+    // them on a spaceship directly into the sun.
+    //
+    // PSD is not my favourite file format.
+
+    if(sign!='8BIM') break; // sanity check
+                             </code></pre>
+          <p><a href="https://code.google.com/p/xee/source/browse/XeePhotoshopLoader.m?r=f16763d221dfca6253983824b470adf553a19e06#108">XeePhotoshopLoader.m</a></p>
+        </section>
+        <section>
+          <h2>Comments</h2>
+        </section>
+        <section>
+          <h2>Be kind</h2>
+        </section>
+        <section>
+          <h2>Please & thank you</h2>
+          <p>'Could we move this function to another file?'</p>
+        </section>
+        <section>
+          <h2>Please & thank you</h2>
+          <p>'Mayhaps we please move this function to another file forthwith?'</p>
+        </section>
+        <section>
+          <h2>Less code is better than fast code</h2>
+          <p>it's extraordinarily easy to find and fix slow code</p>
+          <p>it's extraordinarily difficult to find and fix superfluous code</p>
+        </section>
+        <section>
+          <h2>Less code is better than code</h2>
+          <p>it's extraordinarily easy to add code</p>
+          <p>it's extraordinarily difficult to remove code</p>
+        </section>
+        <section>
+          <h2>Max out your 401(k) and IRA contributions</h2>
+          <p><img src="http://i.imgur.com/COyj7AW.png"></p>
+        </section>
+        <section>
+          <h2>Make a programming language</h2>
+        </section>
+        <section>
+          <h2>Custom operators</h2>
+          <pre class="c">
+            matrix_multiply(a, b);
+          </pre>
+          <pre class="haskell">
+            a * b;
+          </pre>
+        </section>
+        <section>
+          <h2>Custom operators</h2>
+          <pre class="c">
+            matrix_plus(matrix_multiply(matrix_multiply(a, b), c), d);
+          </pre>
+          <pre class="haskell">
+            (a * b * c) + d;
+          </pre>
+        </section>
+        <section>
+          <h2>Custom operators</h2>
+          <p>You deserve to use custom operators</p>
+        </section>
+        <section>
+          <h2>Custom keywords</h2>
+          <p>The humble if</p>
+        </section>
+        <section>
+          <h2>Processes</h2>
+          <p>one process for every 1000 lines of code</p>
+        </section>
+        <section>
+          <h2>Processes</h2>
+          <p>one crash takes down an entire process</p>
+        </section>
+        <section>
+          <h2>Make graphics</h2>
+          <p><a href="https://www.youtube.com/watch?v=JAFhkdGtHck">SIGGRAPH 2013 Technical Papers</a></p>
+        </section>
+        <section>
+          <h2>Make a quine</h2>
+          <pre class="ruby"><code>puts <<2*2,2
+puts <<2*2,2
+2          </code></pre>
+          <p>See also: <a href="http://mamememo.blogspot.com/2010/09/qlobe.html">Qlobe</a></p>
+        </section>
+        <section>
+          <h2>Make vacation plans with your friends</h2>
+        </section>
+        <section>
+          <h2>Interview people</h2>
+        </section>
+        <section>
+          <h2>Golf a program</h2>
+        </section>
+        <section>
+          <h2>Set up a warrant canary</h2>
+          <p>https://canarywatch.org/</p>
+        </section>
+        <section>
+          <h2>Lie about the number of tips you have</h2>
+        </section>
+        <section>
+          <h2>Give back</h2>
+        </section>
+	  </div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+	  // Full list of configuration options available at:
+	  // https://github.com/hakimel/reveal.js#configuration
+	  Reveal.initialize({
+	  controls: true,
+	  slideNumber: true,
+	  progress: true,
+	  history: true,
+	  center: true,
+
+	  transition: 'none', // none/fade/slide/convex/concave/zoom
+	  backgroundTransition: 'none', // none/fade/slide/convex/concave/zoom
+
+	  // Optional reveal.js plugins
+	  dependencies: [
+	  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+	  { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	  { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	  { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+	  { src: 'plugin/zoom-js/zoom.js', async: true },
+	  { src: 'plugin/notes/notes.js', async: true }
+	  ]
+	  });
+	</script>
+
+  </body>
+</html>
